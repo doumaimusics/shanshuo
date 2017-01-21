@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>闪烁字体效果</title>
+<style type="text/css">
+/* 定义keyframe动画，命名为blink */
+@keyframes blink{
+  0%{opacity: 1;}
+  50%{opacity: 1;}
+  50.01%{opacity: 0.5;} /* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+  100%{opacity: 0.5;} 
+}
+
+/* 添加兼容性前缀 */
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0.5; }
+    100% { opacity: 0.5; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0.5; }
+    100% { opacity: 0.5; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0.5; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0.5; }
+    100% { opacity: 0.5; }
+}
+
+/* 定义blink类*/
+.blink{
+    animation: blink .75s linear infinite;  
+    /* 其它浏览器兼容性前缀 */
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    color: #dd4814;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+	这里是<span class="blink">闪烁字体</span>
+</div>
+</body>
+</html>
+
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+	
+</body>
+<script>
+//	var arr1 =[1,2,2,2,3,3,3,4,5,6],
+//  arr2 = [];
+//for(var i = 0,len = arr1.length; i< len; i++){
+//  if(arr2.indexOf(arr1[i]) < 0){
+//      arr2.push(arr1[i]);
+//  }
+//}
+//document.write(arr2); // 1,2,3,4,5,6
+
+
+var arr1 = [1,2,2,2,3,3,3,4,4,4,5,5,5,1,1,1,6,8,6,8],arr2 = [];
+for(var i = 0,len = arr1.length;i<len;i++) {
+	if(arr2.indexOf(arr1[i])<0){
+		arr2.push(arr1[i])
+	}
+}
+document.write(arr2); 
+</script>
+</html>-->
